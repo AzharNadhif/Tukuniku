@@ -1,0 +1,394 @@
+html {
+    scroll-behavior: smooth;
+}
+/* Gaya kustom untuk navbar */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover: garis merah muncul di bawah link */
+.nav-link:hover {
+    color: #fff; /* Mengubah warna teks jika diperlukan */
+    background-color: transparent;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #621D1D; /* Warna garis */
+    transition: all 0.3s ease;
+}
+
+/* Menambahkan garis di bawah link yang aktif secara default */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #621D1D; /* Warna garis */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.navbar {
+    background-color: black;
+}
+.body {
+    font-family: 'Palanquin', serif;
+}
+h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: bolder;
+    color: #F8E47C;
+    font-size: 50px;
+}
+h4 {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: bolder;
+    color: #F8E47C;
+}
+.satu p {
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Gaya tambahan untuk memastikan ikon toggler terlihat pada latar belakang gelap */
+.navbar-light .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+#carouselExampleIndicators {
+    width: 50%; /* Menyesuaikan lebar carousel dengan ukuran gambar */
+    margin: auto; /* Pusatkan carousel di tengah */
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Mengatur tinggi carousel */
+.carousel-item {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mengatur ukuran gambar */
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#carouselExampleIndicators {
+    margin-left: 0px;
+    width: 600px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: auto;
+    bottom: 10px; /* Adjust the bottom position as needed */
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    background-color: black; /* Black background for the controls */
+    margin-bottom: -10px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    display: inline-block;
+    width: 150%;
+    background-size: contain;
+}
+/* Atur .carousel agar menggunakan Flexbox */
+.carousel {
+    display: flex;
+}
+
+/* Jika Anda menggunakan img di dalam .carousel-item, pastikan ia responsif */
+.carousel-fade .carousel-inner .carousel-item {
+    opacity: 0;
+    transition-duration: .6s; /* Anda dapat mengubah durasi sesuai kebutuhan */
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .carousel-item.active,
+.carousel-fade .carousel-inner .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-inner .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .carousel-item-next,
+.carousel-fade .carousel-inner .carousel-item-prev,
+.carousel-fade .carousel-inner .carousel-item.active.carousel-item-right,
+.carousel-fade .carousel-inner .carousel-item.active.carousel-item-left {
+    transform: translateX(0);
+    opacity: 0;
+}
+
+    /* Untuk transisi masuk, tidak perlu transformasi */
+.carousel-fade .carousel-inner .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-inner .carousel-item-prev.carousel-item-right,
+.carousel-fade .carousel-inner .carousel-item.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* RESPONSIVE CAROUSEL */
+/* Atur carousel untuk menjadi 100% lebar pada perangkat yang lebih kecil */
+@media (max-width: 768px) {
+    #carouselExampleIndicators {
+        width: 100%; /* Gunakan seluruh lebar layar */
+        margin-left: 0; /* Tidak perlu margin kiri */
+        margin-right: 0; /* Tidak perlu margin kanan */
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        width: 50px; /* Lebih kecil untuk layar yang lebih kecil */
+        height: 50px; /* Lebih kecil untuk layar yang lebih kecil */
+        bottom: 0; /* Sesuaikan posisi bawah */
+        background-color: rgba(0, 0, 0, 0.5); /* Warna dengan transparansi */
+        margin-bottom: 0; /* Sesuaikan margin bawah */
+    }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        display: inline-block;
+        width: 150%;
+        background-size: contain;
+    }
+
+    /* Menyesuaikan tinggi carousel-item untuk menjadi auto agar gambar tidak terpotong */
+    .carousel-item, .carousel-item img {
+        height: auto;
+        object-fit: contain; /* Ganti cover dengan contain untuk melihat seluruh gambar */
+    }
+    
+    
+}
+
+
+.kirisatu {
+    background-image: url('asset/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.kanansatu {
+    padding-left: 0px;
+    background-image: url('asset/background1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* SECTION 2 */
+.duakiri {
+    background-color: #621d1d; 
+ 
+}
+.duakiri h1 {
+    margin-left: 10rem;
+   
+}
+.judul {
+    background-color: #291212;
+    margin-bottom: 10px;
+    margin-right: -15px;
+    margin-left: -20px;
+}
+.duakiri p {
+   margin: 50px;
+   font-size: 25px;
+}
+.view {
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 50px;
+    color: white;
+}
+/* RESPONSIVE BUTTON */
+@media (max-width: 600px) {
+    .view {
+        padding-left: 20px; /* Padding yang lebih kecil untuk layar kecil */
+        padding-right: 20px; /* Padding yang lebih kecil untuk layar kecil */
+        margin-left: auto; /* Menambahkan margin untuk memusatkan tombol */
+        margin-right: auto; /* Menambahkan margin untuk memusatkan tombol */
+        display: block; /* Membuat tombol menjadi block untuk memungkinkan margin auto bekerja */
+        width: fit-content; /* Atau gunakan width tertentu jika Anda ingin lebar tombol spesifik */
+    }
+}
+.duakanan {
+    background-color: #621d1d; 
+}
+#section2 {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+/* SECTION 3 */
+.kiritiga p {
+    text-align: justify; 
+    color: white;
+    font-size: 25px;
+}
+.tigakiri {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+.produk {
+    color: white;
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+.carousel-item .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+  
+.carousel-item .col {
+    padding-right: 0;
+    padding-left: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+  
+.carousel-item .card {
+    width: 100%;
+    /* Adjust other styling as needed */
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.kembali, .selanjutnya {
+    position: absolute;
+    top: auto;
+    bottom: 10px; /* Adjust the bottom position as needed */
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    background-color: black; /* Black background for the controls */
+    top: 50%; /* Center vertically */
+}
+.ikon {
+    display: inline-block;
+    width: 150%;
+    background-size: contain;
+}
+.beli {
+    background-color: #621D1D;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 0px 12px 0px 12px;
+}
+  
+
+/* SECTION 4 */
+
+/* MAPS */
+
+.maps{
+    overflow:hidden;
+    position:relative;
+    justify-content: center;
+    align-items: center;
+}
+.map-container-2 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.peta {
+    height: 500px;
+    width: 900px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+/* RESPONSIVE MAP */
+@media (max-width: 600px) {
+    .peta {
+        height: 300px;  /* Tinggi yang lebih kecil untuk layar kecil */
+        width: 100%;  /* Gunakan seluruh lebar layar */
+    }
+}
+
+
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: white;
+}
+
+/* SPLASH SCREEN */
+/* 
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.splash-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.splash-logo {
+    width: 150px;
+    margin-bottom: 20px;
+} */
+
+/* Fade out effect for the video and content */
+/* @keyframes fadeOut {
+  0% { */
+    /* opacity: 1; Start fully visible */
+  /* }
+  100% { */
+    /* opacity: 0; End completely transparent */
+  /* }
+} */
+
+/* .splash-screen { */
+  /* animation: fadeOut 2s ease 2s forwards; Start fade out after 6 seconds, duration 2 seconds */
+/* } */
+
